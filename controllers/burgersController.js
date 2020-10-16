@@ -17,38 +17,38 @@ router.get("/", (req, res) => {
 });
 
 router.post("/api/burgers", (req, res) => {
-  burger.create({ name: req.body.name, devoured: req.body.sleepy }, (result) => {
+  burger.create({ name: req.body.name, devoured: req.body.devoured }, (result) => {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
   });
 });
 
-// using put to replace the value of devoured for a
-// specific burger resource
-router.put("/api/burgers/:id/devoured", (req, res) => {
-  const condition = { id: req.params.id };
-  const update = { sleepy: req.body.value };
+// // using put to replace the value of devoured for a
+// // specific burger resource
+// router.put("/api/burgers/:id/devoured", (req, res) => {
+//   const condition = { id: req.params.id };
+//   const update = { sleepy: req.body.value };
 
-  burger.update(update, condition, (result) => {
-    if (result.affectedRows === 0) {
-      // If no rows were affected, then the ID must not exist, so 404
-      return res.status(404).end();
-    }
-    res.status(200).end();
-  });
-});
+//   burger.update(update, condition, (result) => {
+//     if (result.affectedRows === 0) {
+//       // If no rows were affected, then the ID must not exist, so 404
+//       return res.status(404).end();
+//     }
+//     res.status(200).end();
+//   });
+// });
 
-router.delete("/api/burgers/:id", (req, res) => {
-  const condition = { id: req.params.id };
+// router.delete("/api/burgers/:id", (req, res) => {
+//   const condition = { id: req.params.id };
 
-  burger.delete(condition, (result) => {
-    if (result.affectedRows === 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } 
-    res.status(200).end();
-  });
-});
+//   burger.delete(condition, (result) => {
+//     if (result.affectedRows === 0) {
+//       // If no rows were changed, then the ID must not exist, so 404
+//       return res.status(404).end();
+//     } 
+//     res.status(200).end();
+//   });
+// });
 
 // Export routes for server.js to use.
 module.exports = router;
