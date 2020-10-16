@@ -10,6 +10,10 @@ router.get("/", (req, res) => {
   burger.all((data) => {
     const hbsObject = {
       burgers: data,
+      imageLink: "/assets/images/hamburger.png",
+      alt: "Cheese Burger",
+      width: "10%",
+      height: "10%",
     };
     console.log(hbsObject);
     res.render("index", hbsObject);
