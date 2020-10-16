@@ -12,11 +12,11 @@ const burger = {
 //       cb(res);
 //     });
 //   },
-//   update: (burgerData, criteria, cb) => {
-//     orm.updateOne("burgers", burgerData, criteria, (res) => {
-//       cb(res);
-//     });
-//   },
+  update: (burgerData, criteria, cb) => {
+    orm.updateOne("burgers", burgerData, criteria, (res) => {
+      cb(res);
+    });
+  },
 //   delete: (condition, cb) => {
 //     orm.deleteOne("burgers", condition, (res) => {
 //       cb(res);

@@ -19,9 +19,19 @@ const orm = {
 
     // // Example of updateValues: { name: "panther", sleepy: true }
     // // Example of condition: { id: 1 }
-    // updateOne: (table, updateValues, condition, cb) => {
+    updateOne: (table, updateValues, condition, cb) => {
+        const queryString = "UPDATE ?? SET ? WHERE ? LIMIT 1";
+    const values = [table, updateValues, condition];
 
-    // },
+    console.log(queryString);
+    connection.query(queryString, values, (err, result) => {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+
+    },
     // // Delete row(s) from table with given condition.
     // // Example condition: { id: 1 }
     // deleteOne: (table, condition, cb) => {
