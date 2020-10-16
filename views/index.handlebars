@@ -4,8 +4,26 @@
 <h2>Un-devoured Burgers!</h2>
 <ol>
   {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devour=true}}
-    {{/unless}}
+  {{#unless devoured}}
+  <li>
+    {{burger_name}}
+    <button class="change-devour" data-id="{{id}}" data-newDevour="true">
+      Devour!
+    </button>
+  </li>
+
+  {{/unless}}
+  {{/each}}
+</ol>
+<hr>
+
+<h2>Devoured Burgers!</h2>
+<ol>
+  {{#each burgers}}
+  {{#if devoured}}
+  <li class="change-devour" data-id="{{id}}" data-newDevour="false">
+    {{burger_name}}
+  </li>
+  {{/if}}
   {{/each}}
 </ol>
