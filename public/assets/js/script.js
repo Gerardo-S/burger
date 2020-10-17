@@ -22,24 +22,25 @@ $(() => {
       });
     });
   
-    // $(".create-form").on("submit", (event) => {
-    //   // Make sure to preventDefault on a submit event.
-    //   event.preventDefault();
+    $(".create-form").on("submit", (event) => {
+      // Make sure to preventDefault on a submit event.
+      event.preventDefault();
+      
+      const newBurger = {
+        name: $("#inputBurger").val().trim(),
+        // devoured: $("[name=devoured]").val(),
+      };
   
-    //   const newCat = {
-    //     name: $("#ca").val().trim(),
-    //     sleepy: $("[name=sleepy]:checked").val().trim(),
-    //   };
-  
-    //   // Send the POST request.
-    //   $.ajax("/api/cats", {
-    //     type: "POST",
-    //     data: newCat,
-    //   }).then(() => {
-    //     // Reload the page to get the updated list
-    //     location.reload();
-    //   });
-    // });
+      // Send the POST request.
+      $.ajax("/api/burgers", {
+        type: "POST",
+        data: newBurger,
+      }).then(() => {
+        console.log(newBurger);
+        // Reload the page to get the updated list
+        location.reload();
+      });
+    });
   
     // $(".delete-cat").on("click", function () {
     //   const id = $(this).data("id");

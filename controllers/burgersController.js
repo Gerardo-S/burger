@@ -14,19 +14,18 @@ router.get("/", (req, res) => {
       alt: "Cheese Burger",
       width: "10%",
       height: "10%",
-      
     };
     console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
 
-// router.post("/api/burgers", (req, res) => {
-//   burger.create({ name: req.body.name, devoured: req.body.devoured }, (result) => {
-//     // Send back the ID of the new quote
-//     res.json({ id: result.insertId });
-//   });
-// });
+router.post("/api/burgers", (req, res) => {
+  burger.create({ burger_name: req.body.name }, (result) => {
+    // Send back the ID of the new quote
+    res.json({ id: result.insertId });
+  });
+});
 
 // using put to replace the value of devoured for a
 // specific burger resource
