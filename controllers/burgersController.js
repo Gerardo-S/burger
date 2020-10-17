@@ -14,6 +14,7 @@ router.get("/", (req, res) => {
       alt: "Cheese Burger",
       width: "10%",
       height: "10%",
+      
     };
     console.log(hbsObject);
     res.render("index", hbsObject);
