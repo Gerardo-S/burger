@@ -1,17 +1,18 @@
-<header class="text-center">
+<header class="text-center ">
+  <br>
   <img src="{{imageLink}}" alt="{{alt}}" width="{{width}}" height="{{height}}" />
-  <h1>Eat-Da-Burger!</h1>
+  <h1 class = "text-danger">Eat-Da-Burger!</h1>
 </header><br>
 
 {{!-- Lists un-devoured Burgers --}}
 {{!-- <h2>Un-devoured Burgers!</h2> --}}
 
-<main class="container">
-  <section class="row justify-content-center">
+<main class="container ">
+  <section class="row justify-content-center ">
     <div class="text-left col-md-4">
       {{#each burgers}}
       {{#unless devoured}}
-      <p class="centerText">
+      <p class="centerText ">
         {{id}}. {{burger_name}}
         <button class="change-devour btn btn-light buttonPosition" data-id="{{id}}" data-newdevour="true">
           Devour!
