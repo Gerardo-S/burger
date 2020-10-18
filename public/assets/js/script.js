@@ -42,16 +42,14 @@ $(() => {
       });
     });
   
-    // $(".delete-cat").on("click", function () {
-    //   const id = $(this).data("id");
-  
-    //   // Send the DELETE request.
-    //   $.ajax(`/api/cats/${id}`, {
-    //     type: "DELETE",
-    //   }).then(() => {
-    //     // Reload the page to get the updated list
-    //     location.reload();
-    //   });
-    // });
+    $(".reset").on("click", function () {
+      // Send the DELETE request.
+      $.ajax(`/api/burgers`, {
+        type: "DELETE",
+      }).then(() => {
+        // Reload the page to get the updated list
+        location.reload();
+      });
+    });
   });
   

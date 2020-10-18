@@ -18,11 +18,11 @@ const burger = {
       cb(res);
     });
   },
-//   delete: (condition, cb) => {
-//     orm.deleteOne("burgers", condition, (res) => {
-//       cb(res);
-//     });
-//   },
+  delete: (condition, cb) => {
+    orm.deleteAll("burgers", condition, (res) => {
+      cb(res);
+    });
+  },
 };
 
 // Export the database functions for the controller (catsController.js).

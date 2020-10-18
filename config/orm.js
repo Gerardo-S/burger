@@ -42,11 +42,20 @@ const orm = {
         });
 
     },
+
     // // Delete row(s) from table with given condition.
     // // Example condition: { id: 1 }
-    // deleteOne: (table, condition, cb) => {
+    deleteAll: (table, condition, cb) => {
+        const queryString = "DELETE FROM ?? WHERE ? ";
+        const values = [table, condition];
+        connection.query(queryString, values, (err, result) => {
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        });
 
-    // },
+    },
 };
 
 // Export the orm object
