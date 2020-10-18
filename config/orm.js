@@ -1,6 +1,5 @@
 const connection = require("../config/connection.js");
 
-// Object for all our SQL statement functions.
 const orm = {
     selectAll: (tableInput, cb) => {
         const queryString = "SELECT * FROM ??";
@@ -27,8 +26,6 @@ const orm = {
 
     },
 
-    // // Example of updateValues: { name: "panther", sleepy: true }
-    // // Example of condition: { id: 1 }
     updateOne: (table, updateValues, condition, cb) => {
         const queryString = "UPDATE ?? SET ? WHERE ? LIMIT 1";
         const values = [table, updateValues, condition];
@@ -43,8 +40,6 @@ const orm = {
 
     },
 
-    // // Delete row(s) from table with given condition.
-    // // Example condition: { id: 1 }
     deleteAll: (table, condition, cb) => {
         const queryString = "DELETE FROM ?? WHERE ? ";
         const values = [table, condition];
@@ -58,5 +53,4 @@ const orm = {
     },
 };
 
-// Export the orm object
 module.exports = orm;

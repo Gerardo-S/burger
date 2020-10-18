@@ -31,7 +31,7 @@
       {{/each}}
     </div>
 
-    {{!-- <h2>Devoured Burgers!</h2> --}}
+    {{!-- Devoured Burgers!--}}
     <div class="col-md-4 right">
       <ol class=" list-group">
         {{#each burgers}}
@@ -43,6 +43,7 @@
         {{/each}}
       </ol>
       <br>
+      {{!-- Delete All button --}}
       <div class="row justify-content-center">
         <button type="submit" class="btn btn-danger col-md-3 reset">Delete All</button><br>
       </div>
@@ -51,6 +52,7 @@
 
   </section><br><br>
 
+{{!-- Submit form for new burger --}}
   <form class="row justify-content-center create-form">
     <div class="form-group col-md-6 text-center">
       <textarea class="form-control" id="inputBurger" name="name" rows="3"></textarea><br>
